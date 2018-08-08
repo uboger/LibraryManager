@@ -1,3 +1,5 @@
+####运行环境
+-JDK(32位jdk)
+-windows mac linux ....
+-数据库（access数据库）
 
-access数据库要使用32位jdk否则数据库无法连接
-需要配置数据源
