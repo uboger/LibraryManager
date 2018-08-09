@@ -72,10 +72,25 @@ public class DbOp{
   - 建议不要放在有中文名的路径下
   - 下载方法略过
   - 打开>控制面板>所有控制面板项>管理工具>ODBC数据源(32位）进行数据源配置
+  - ![](https://github.com/uboger/images/blob/master/image/access/00.png)
   - 用户DNS>添加>选择 Driver do Microsoft Access(*.mdb)项
+  - ![](https://github.com/uboger/images/blob/master/image/access/1.png)
+  - 
+  - ![](https://github.com/uboger/images/blob/master/image/access/2.png)
   - 对话框填写数据源名为 “bookdb”
+  - ![](https://github.com/uboger/images/blob/master/image/access/4.png)
   - 选择“图书管理.mdb”作为数据源>确定>确定>确定
+  - ![](https://github.com/uboger/images/blob/master/image/access/5.png)
+  - ![](https://github.com/uboger/images/blob/master/image/access/6.png)
   
-  
-
-  
+ #### 32位JDK及配置
+ - [oracle官网下载](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"@oracle")jdk-8u181-windows-i586.exe
+ - [百度网盘下载java8](https://pan.baidu.com/s/1qBPDtTaIY_IXTsWHck2ZIQ@猪侯美人戏)jdk-8u181-windows-i586.exe
+ - [百度网盘下载java7](https://pan.baidu.com/s/1O0a35pjyUvM7ppgGkBl97w@猪侯美人戏)jdk-7u60-windows-i586.exe
+ - [百度网盘下载java6](https://pan.baidu.com/s/1K4gaAjtwqZ22mguqfr97YQ@猪侯美人戏)jdk-6u13-windows-i586-p.exe
+ - [百度网盘下载java5](https://pan.baidu.com/s/1mold9T3rzu9nQiLNGt8KbQ@猪侯美人戏)jdk-1_5_0_04-windows-i586-p.exe
+ 
+ 
+ 
+ 
+ 
