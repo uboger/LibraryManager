@@ -83,12 +83,17 @@ public class DbOp{
   - ![](https://github.com/uboger/images/blob/master/image/access/5.png)
   - ![](https://github.com/uboger/images/blob/master/image/access/6.png)
   
- #### 32位JDK及配置
+ #### 32位JDK及配置(注意:64位操作系统支持32位JDK,而32位操作系统不支持64位JDK安装）
  - [oracle官网下载](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"@oracle")jdk-8u181-windows-i586.exe
  - [百度网盘下载java8](https://pan.baidu.com/s/1qBPDtTaIY_IXTsWHck2ZIQ@猪侯美人戏)jdk-8u181-windows-i586.exe
  - [百度网盘下载java7](https://pan.baidu.com/s/1O0a35pjyUvM7ppgGkBl97w@猪侯美人戏)jdk-7u60-windows-i586.exe
  - [百度网盘下载java6](https://pan.baidu.com/s/1K4gaAjtwqZ22mguqfr97YQ@猪侯美人戏)jdk-6u13-windows-i586-p.exe
  - [百度网盘下载java5](https://pan.baidu.com/s/1mold9T3rzu9nQiLNGt8KbQ@猪侯美人戏)jdk-1_5_0_04-windows-i586-p.exe
+ - 在环境变量path加入“D:\Program Files (x86)\Java\jdk1.8.0_181\bin”
+ - 打开>计算机>属性>高级系统设置>环境变量>path>编辑加入变量值D:\Program Files (x86)\Java\jdk1.8.0_181\bin
+ - 以管理员打开CMD命令行
+ - 输入 Java -version 测试Java是否安装成功
+ - 接着输入 javac 和 java 如果后面有出现内容说明Java安装成功
  
  
  
