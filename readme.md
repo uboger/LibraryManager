@@ -1,3 +1,7 @@
+#### 登录信息
+- 超级管理员（用户名：admin 密码：123）
+- 运行前确定你已经成功的安装32位java和配置Access数据源
+
 #### 运行环境
 - JDK(32位jdk) access是只支持32位（x86)所以必须在32位jdk下运行
 - windows mac linux ....
