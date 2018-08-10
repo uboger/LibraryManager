@@ -18,6 +18,7 @@
 - 数据库驱动 sun.jdbc.odbc.JdbcOdbcDriver
 
 #### 连接数据库代码
+- 从access数据库连接代码可以看出access数据库毫无安全可言
 ```java
 public class DbOp{
 	private static String driver="sun.jdbc.odbc.JdbcOdbcDriver";
