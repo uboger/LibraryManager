@@ -1,11 +1,18 @@
-#### 登陆流程图
+#### Using FlowChart
 
+setting:
+
+    {
+        flowChart : true
+    }
+
+#### Example
 
 ```flow
-st=>start: 管理员登陆
-op=>operation: 登陆账号和密码验证
-cond=>condition: 账号和密码是否通过?
-e=>end: Into 图书管理主界面
+st=>start: User login
+op=>operation: Operation
+cond=>condition: Successful Yes or No?
+e=>end: Into admin
 
 st->op->cond
 cond(yes)->e
@@ -117,6 +124,5 @@ public class DbOp{
  - 接着输入 javac 和 java 如果后面有出现内容说明Java安装成功
  
  
- 
- 
+
  
