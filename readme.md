@@ -1,6 +1,22 @@
+#### 登陆流程图
+
+
+```flow
+st=>start: 管理员登陆
+op=>operation: 登陆账号和密码验证
+cond=>condition: 账号和密码是否通过?
+e=>end: Into 图书管理主界面
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
 #### 登录信息
 - 超级管理员（用户名：admin 密码：123）
 - 运行前确定你已经成功的安装32位java和配置Access数据源
+
+#### 登陆成功界面
+![](https://github.com/uboger/images/blob/master/image/loginin/lbm.gif)
 
 #### 运行环境
 - JDK(32位jdk) access是只支持32位（x86)所以必须在32位jdk下运行
