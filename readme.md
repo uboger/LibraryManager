@@ -6,6 +6,7 @@
 - JDK(32位jdk) access是只支持32位（x86)所以必须在32位jdk下运行
 - windows mac linux ....
 - 数据库（access数据库）
+- 使用jdk1.5_x
 
 
 #### 使用技术
