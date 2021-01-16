@@ -12,19 +12,19 @@ public class Back extends Frame {
 	 * 
 	 */
 	private static final long serialVersionUID = 7670129939284773294L;
-	Label bookidlb = new Label("Í¼Êé±àºÅ"), readeridlb = new Label("¶ÁÕß±àºÅ");
+	Label bookidlb = new Label("å›¾ä¹¦ç¼–å·"), readeridlb = new Label("è¯»è€…ç¼–å·");
 	TextField bookidtxt = new TextField(), readeridtxt = new TextField();
-	Button querybtn = new Button("²éÑ¯"), borrowbtn = new Button("»¹Êé"),
-			closebtn = new Button("Çå³ı");
+	Button querybtn = new Button("æŸ¥è¯¢"), borrowbtn = new Button("è¿˜ä¹¦"),
+			closebtn = new Button("æ¸…é™¤");
 	String SepLine = "--------------------------------------------------";
-	String[] sep = { "Í¼ÊéĞÅÏ¢", "¶ÁÕßĞÅÏ¢", "½èÔÄĞÅÏ¢" };
+	String[] sep = { "å›¾ä¹¦ä¿¡æ¯", "è¯»è€…ä¿¡æ¯", "å€Ÿé˜…ä¿¡æ¯" };
 	Label[] seplabel = new Label[3];
-	String[] optionname = { "ÊéÃû£º", "×÷Õß£º", "³ö°æÉç£º", "³ö°æÊ±¼ä£º", "¶¨¼Û£º", "´æÁ¿£º", "ĞÕÃû£º","ÀàĞÍ£º", "¿É½èÊı£º", "¿É½èÌìÊı£º", "½èÔÄÈÕÆÚ£º","ÔÄ¶ÁÌìÊı£º","»¹ÊéÈÕÆÚ" };
+	String[] optionname = { "ä¹¦åï¼š", "ä½œè€…ï¼š", "å‡ºç‰ˆç¤¾ï¼š", "å‡ºç‰ˆæ—¶é—´ï¼š", "å®šä»·ï¼š", "å­˜é‡ï¼š", "å§“åï¼š","ç±»å‹ï¼š", "å¯å€Ÿæ•°ï¼š", "å¯å€Ÿå¤©æ•°ï¼š", "å€Ÿé˜…æ—¥æœŸï¼š","é˜…è¯»å¤©æ•°ï¼š","è¿˜ä¹¦æ—¥æœŸ" };
 	Label[] alloption = new Label[13];
 	Label[] showoption = new Label[13];
 
 	public Back() {
-		setTitle("Í¼Êé¹é»¹");
+		setTitle("å›¾ä¹¦å½’è¿˜");
 		setLayout(null);
 		setSize(500, 470);
 		setResizable(false);
@@ -46,7 +46,7 @@ public class Back extends Frame {
 				ly = ly + 30;
 			}
 			if (ly == 90 || ly == 210 || ly == 300) {
-				System.out.println(i);// /Ì«Ææ¹ÖÁË
+				System.out.println(i);// /å¤ªå¥‡æ€ªäº†
 				seplabel[i] = new Label(SepLine + sep[i] + SepLine);
 				seplabel[i].setBounds(20, ly, 440, 20);
 				add(seplabel[i]);
@@ -107,18 +107,18 @@ public class Back extends Frame {
 		if (!bookid.equals("") && !readerid.equals("")) {
 			Date currentdate = new Date();
 			String borrowbackdate = showoption[12].getText();
-			String sql = "update borrow set back_date='"+borrowbackdate+"',if_back='ÊÇ'";
-			sql=sql+"where book_id='"+bookid+"'and reader_id='"+readerid+"'and if_back='·ñ'";
+			String sql = "update borrow set back_date='"+borrowbackdate+"',if_back='æ˜¯'";
+			sql=sql+"where book_id='"+bookid+"'and reader_id='"+readerid+"'and if_back='å¦'";
 			String sql1 = "update book set stock='"
 					+ (Integer.parseInt(showoption[5].getText()) + 1) + "'"
 					+ "where id='" + bookid + "'";
 			int success = DbOp.executeUpdate(sql);
 			if (success == 1) {
 				DbOp.executeUpdate(sql1);
-				JOptionPane.showMessageDialog(null, "»¹Êé³É¹¦");
+				JOptionPane.showMessageDialog(null, "è¿˜ä¹¦æˆåŠŸ");
 
 			} else {
-				JOptionPane.showMessageDialog(null, "»¹ÊéÊı¾İµÇ¼ÇÊ§°Ü£¡");
+				JOptionPane.showMessageDialog(null, "è¿˜ä¹¦æ•°æ®ç™»è®°å¤±è´¥ï¼");
 			}
 			setInitialize();
 		}
@@ -128,14 +128,14 @@ public class Back extends Frame {
 		String bookid = bookidtxt.getText(), readerid = readeridtxt.getText();
 		if (!bookid.equals("") && !readerid.equals("")) {
 		} else {
-			JOptionPane.showMessageDialog(null, "Í¼Êé±àºÅºÍ¶ÁÕß±àºÅ¶¼²»¿ÉÒÔÎª¿Õ");
+			JOptionPane.showMessageDialog(null, "å›¾ä¹¦ç¼–å·å’Œè¯»è€…ç¼–å·éƒ½ä¸å¯ä»¥ä¸ºç©º");
 			setInitialize();
 			return;
 		}
 		Book book = BookSelect.SelectBookByID(bookid);
 		Reader reader = ReaderSelect.SelectReaderByID(readerid);
 		if (!IfBorrowBack.findBook(bookid, readerid)) {
-			JOptionPane.showMessageDialog(null,"²éÑ¯²»µ½¸Ã¶ÁÕß½èÔÄÕâ±¾Êé");
+			JOptionPane.showMessageDialog(null,"æŸ¥è¯¢ä¸åˆ°è¯¥è¯»è€…å€Ÿé˜…è¿™æœ¬ä¹¦");
 			setInitialize();
 			return;
 
@@ -154,7 +154,7 @@ public class Back extends Frame {
 			showoption[8].setText(String.valueOf(reader.getMax_num()));
 			showoption[9].setText(String.valueOf(reader.getDays_num()));
 		} else {
-			JOptionPane.showMessageDialog(null, "²»´æÔÚ¸ÃÍ¼Êé»ò¸Ã¶ÁÕß");
+			JOptionPane.showMessageDialog(null, "ä¸å­˜åœ¨è¯¥å›¾ä¹¦æˆ–è¯¥è¯»è€…");
 			setInitialize();
 			return;
 
@@ -170,14 +170,14 @@ public class Back extends Frame {
 		bookidtxt.setEditable(false);
 		readeridtxt.setEditable(false);
 	}
-	public boolean IfLeapYear(int year) {// ÊÇ·ñÈòÄê£¬ÓÃÓÚ¼ÆËãÊ±¼ä²î
+	public boolean IfLeapYear(int year) {// æ˜¯å¦é—°å¹´ï¼Œç”¨äºè®¡ç®—æ—¶é—´å·®
 		if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
 			return true;
 		}
 		return false;
 	}
 
-	public String getReaderBorrowDays(Date date1, Date date2) {// ¼ÆËãÊ±¼ä²î
+	public String getReaderBorrowDays(Date date1, Date date2) {// è®¡ç®—æ—¶é—´å·®
 		String sum = "";
 		int year1 = 0, month1 = 0, day1 = 0;
 		int year2 = 0, month2 = 0, day2 = 0;
@@ -222,11 +222,11 @@ public class Back extends Frame {
 		sum = String.valueOf(count);
 		return sum;
 	}
-	public Date getBorrowDate(String bookid, String readerid) {// »ñÈ¡¶ÁÕß½èÊéÈÕÆÚ
+	public Date getBorrowDate(String bookid, String readerid) {// è·å–è¯»è€…å€Ÿä¹¦æ—¥æœŸ
 		String sql, mydate = "";
 		Date readerdate = new Date();
 		sql = "select * from borrow where book_id='" + bookid
-				+ "' and reader_id='" + readerid + "' and if_back='·ñ'";
+				+ "' and reader_id='" + readerid + "' and if_back='å¦'";
 		ResultSet rs = DbOp.executeQuery(sql);
 		try {
 			if (rs.next()) {
@@ -236,9 +236,9 @@ public class Back extends Frame {
 			readerdate = sdf.parse(mydate);
 			DbOp.close();
 		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(null, "½èÊéÈÕÆÚ²éÑ¯Ê§°Ü");
+			JOptionPane.showMessageDialog(null, "å€Ÿä¹¦æ—¥æœŸæŸ¥è¯¢å¤±è´¥");
 		} catch (ParseException e2) {
-			JOptionPane.showMessageDialog(null, "½èÊéÈÕÆÚÒì³£");
+			JOptionPane.showMessageDialog(null, "å€Ÿä¹¦æ—¥æœŸå¼‚å¸¸");
 		}
 		return readerdate;
 	}
@@ -255,7 +255,7 @@ public class Back extends Frame {
 		borrowbtn.setEnabled(false);
 	}
 
-	public static void main(String[] args){
+	public static void main(String[] args){ 
 		new Back();
 	}
 }
